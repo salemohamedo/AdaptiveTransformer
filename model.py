@@ -3,7 +3,8 @@ import math
 import torch
 import torch.nn as nn
 from torch.nn import TransformerEncoder, TransformerEncoderLayer, AdaptiveLogSoftmaxWithLoss
-from adaptive import AdaptiveSoftmax, AdaptiveInput, AdaptiveTail
+# from adaptive import AdaptiveSoftmax, AdaptiveInput, AdaptiveTail
+from adaptive import AdaptiveInput
 
 
 class PositionalEncoding(nn.Module):
