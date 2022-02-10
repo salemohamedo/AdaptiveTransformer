@@ -77,7 +77,8 @@ class TransformerModel(nn.Module):
             self.decoder = AdaptiveSoftmax(ninp, ntoken, cutoffs, shared_tail=shared_tail)
         else:
             if self.adinp:
-                self.encoder = AdaptiveInput(ninp, ntoken, cutoffs, shared_tail=None)
+                # self.encoder = AdaptiveInput(ninp, ntoken, cutoffs, shared_tail=None)
+                self.encoder = AdaptiveInput(ntoken, -1, ninp, 4, ninp, cutoffs)
             else:
                 self.encoder = nn.Embedding(ntoken, ninp)
                 nn.init.uniform_(self.encoder.weight, -0.1, 0.1)
