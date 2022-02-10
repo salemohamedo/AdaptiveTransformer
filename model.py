@@ -2,7 +2,7 @@ import math
 
 import torch
 import torch.nn as nn
-from torch.nn import TransformerEncoder, TransformerEncoderLayer
+from torch.nn import TransformerEncoder, TransformerEncoderLayer, AdaptiveLogSoftmaxWithLoss
 from adaptive import AdaptiveSoftmax, AdaptiveInput, AdaptiveTail
 
 
@@ -82,7 +82,8 @@ class TransformerModel(nn.Module):
                 self.encoder = nn.Embedding(ntoken, ninp)
                 nn.init.uniform_(self.encoder.weight, -0.1, 0.1)
             if self.adsmax:
-                self.decoder = AdaptiveSoftmax(ninp, ntoken, cutoffs, shared_tail=None)
+                # self.decoder = AdaptiveSoftmax(ninp, ntoken, cutoffs, shared_tail=None)
+                self.decoder = AdaptiveLogSoftmaxWithLoss(ninp, ntoken, cutoffs)
             else:
                 self.decoder = nn.Linear(ninp, ntoken)
                 nn.init.zeros_(self.decoder.weight)
