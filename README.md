@@ -14,7 +14,9 @@ Wikitext-2 results for 6 training epochs
 |---------------------|----------------------|------------------|
 | Vanilla             | 211.3                | 195.85           |
 | Adaptive Softmax    | 122.4                | 203.71           |
+| Adaptive Softmax (Pytorch Impl)   | 118.4                | 206.71           |
 | Adaptive Input      | 248.1                | 218.91           |
+| Adaptive Input (FAIR Impl)     | 249.2                | 240.39        |
 | Both (Tied Weights) | 150.9                | 215.99           |
 
 
