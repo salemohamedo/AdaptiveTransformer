@@ -19,11 +19,11 @@ Wikitext-2 results for 6 training epochs
 | Adaptive Input (FAIR Impl)     | 249.2                | 240.39        |
 | Both (Tied Weights) | 150.9                | 215.99           |
 
-Text8 results for 6 training epochs
+Text8 results for 10 training epochs, 512 dimension hidden and embedding layer
 
 |Model                     | Total Train Time (s) | Test Perplexity  |
 |---------------------|----------------------|------------------|
-| Vanilla             | 8592                | 409.36           |
-| Adaptive Softmax    | 1734                | 417.51           |
-| Adaptive Input      | 8466                | 418.64           |
-| Both (Tied Weights) | 1560                | 404.58           |
+| Vanilla             | 13230                | 215.34           |
+| Adaptive Softmax    | 5002                | 198.62           |
+| Adaptive Input      | 7013                | 240.42           |
+| Both (Tied Weights) | 4901                | 254.3           |
